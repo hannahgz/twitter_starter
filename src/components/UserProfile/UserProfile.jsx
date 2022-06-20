@@ -3,18 +3,20 @@ import { formatNumTweets, formatNumFollowers } from "../../utils/format"
 import "./UserProfile.css"
 
 export default function UserProfile({ userProfile }) {
+  // console.log(userProfile)
   return (
     <div className="col user-profile">
       <div className="card">
         <div className="card-bg" />
-        <CardContent />
-        <CardFooter />
+        <CardContent name={userProfile.name} handle={userProfile.handle} key={userProfile.id}/>
+        <CardFooter numTweets={userProfile.numTweets} numFollowers={userProfile.numFollowers} key={userProfile.id}/>
       </div>
     </div>
   )
 }
 
 export function CardContent(props) {
+  // console.log(props.userProfile.name)
   return (
     <div className="card-content">
       <span className="fa-stack add-picture-icon">
